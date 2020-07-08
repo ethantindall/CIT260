@@ -39,30 +39,83 @@ public class Main {
     }
 
     /**
+     *
+     */
+    public static void enter_book() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter title:");
+        String title = input.nextLine();
+
+        System.out.println("Enter author:");
+        String author = input.nextLine();
+
+        System.out.println("Enter publication year:");
+        int year = input.nextInt();
+
+        System.out.println("Is this a hardback [1], e-book [2], or audiobook [3]?:");
+        int option = input.nextInt();
+
+        int page = 0;
+        double file = 0;
+
+        switch (option) {
+            case 1:
+                //hardback
+                System.out.println("Page count:");
+                page = input.nextInt();
+                System.out.println("Book has been processed.");
+                break;
+            case 2:
+                //ebook
+                System.out.println("Page count:");
+                page = input.nextInt();
+                System.out.println("File size:");
+                file = input.nextDouble();
+                System.out.println("Book has been processed.");
+                break;
+            case 3:
+                // audiobook
+                System.out.println("Recording Length (hh:mm:ss):");
+                String length = input.nextLine();
+
+                System.out.println("File size:");
+                file = input.nextDouble();
+                System.out.println("Book has been processed.");
+                break;
+            default:
+                //try again
+                System.out.println("Try again.");
+                break;
+        }
+    }
+
+
+
+    /**
      * main method
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        label:
-        while (true) {
+        boolean run = true;
+        while (run) {
             System.out.println("Would you like to enter a book [1], look up a book [2], or quit [3]?");
             int in = input.nextInt();
-
             switch (in) {
                 case 1:
-                    lookup_book();
+                    enter_book();
                     break;
                 case 2:
-                    System.out.println("Please enter a book");
+                    lookup_book();
                     break;
                 case 3:
-                    break label;
+                    System.out.println("Goodbye.");
+                    run = false;
+                    break;
                 default:
                     //raise exception
                     System.out.println("Invalid input. Try again.");
                     break;
             }
         }
-        System.out.println("Goodbye.");
     }
 }
