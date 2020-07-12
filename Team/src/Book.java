@@ -18,16 +18,16 @@ public class Book {
 
     }
 
-    public String getAuthor() {return author};
+    public String getAuthor() {return author;}
     public void setAuthor(String x) {author = x;}
 
-    public String getTitle() {return title};
+    public String getTitle() {return title;}
     public void setTitle(String x) {title = x;}
 
-    public int getYear() {return publicationYear};
+    public int getYear() {return publicationYear;}
     public void setYear(int x) {publicationYear = x;}
 
-    public int getDifficulty() {return difficulty};
+    public int getDifficulty() {return difficulty;}
     public void setDifficulty(int x) {difficulty = x;}
 
 

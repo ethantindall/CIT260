@@ -10,6 +10,6 @@ public class Hardcopy extends Book {
         setPageCount(pageCount);
     }
 
-    public int getPageCount() {return pageCount};
+    public int getPageCount() {return pageCount;}
     public void setPageCount(int x) {pageCount = x;}
 }

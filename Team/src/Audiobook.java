@@ -4,8 +4,8 @@ public class Audiobook extends DigitalBook {
     Audiobook() {
         length = 0;}
 
-    public Audiobook(String title, String author, int publicationYear, int difficulty, double length) {
-        super();
+    public Audiobook(String title, String author, int publicationYear, int difficulty, double fileSize, double length) {
+        super(title, author, publicationYear, difficulty, fileSize);
         setLength(length);
     }
 
