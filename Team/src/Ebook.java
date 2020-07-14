@@ -44,4 +44,11 @@ public class Ebook extends DigitalBook {
      * @return none
      */
     public void setAudio(String x) {audio = x;}
+
+    public String toString(){
+        String daString = super.toString();
+        daString += " , " + this.audio + "\n";
+
+        return daString;
+    }
 }

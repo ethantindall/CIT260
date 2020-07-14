@@ -42,4 +42,14 @@ public class DigitalBook extends Book {
      * @return none
      */
     public void setFileType(String x) {fileType = x;}
+
+    public String toString(){
+        String daString = super.toString();
+        daString += " , " + this.fileType;
+
+        return daString;
+    }
 }
+
+
+

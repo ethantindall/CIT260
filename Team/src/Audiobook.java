@@ -21,6 +21,9 @@ public class Audiobook extends DigitalBook {
         setLength(length);
     }
 
+    public Audiobook(String title, String author, int year, int difficulty, double file, String length) {
+    }
+
     /**
      * getLength method
      * @param: none
@@ -41,6 +44,14 @@ public class Audiobook extends DigitalBook {
      * @return none
      */
     public void setFileType(String x) {fileType = x;}
+
+    public String toString(){
+        String daString = super.toString();
+        daString += " , " + this.fileType + "\n";
+        daString += " , " + this.length + "\n";
+
+        return daString;
+    }
 
 }
 

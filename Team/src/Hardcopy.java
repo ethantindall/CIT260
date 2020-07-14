@@ -12,4 +12,12 @@ public class Hardcopy extends Book {
 
     public int getPageCount() {return pageCount;}
     public void setPageCount(int x) {pageCount = x;}
+
+    public String toString(){
+        String daString = super.toString();
+        daString += " , " + this.pageCount + "\n";
+
+        return daString;
+    }
 }
+

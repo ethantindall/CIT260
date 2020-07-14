@@ -30,6 +30,16 @@ public class Book {
 
     }
 
+    public String toString(){
+        String daString = super.toString();
+        daString += " , " + this.title;
+        daString += " , " + this.author;
+        daString += " , " + this.publicationYear;
+        daString += " , " + this.difficulty;
+
+        return daString;
+    }
+
     public String getAuthor() {return author;}
 
     /**
@@ -50,7 +60,7 @@ public class Book {
 
     /**
      * getYear method
-     * @param x
+     * @param: x
      * @return none
      */
     public int getYear() {return publicationYear;}
@@ -64,7 +74,7 @@ public class Book {
 
     /**
      * getDifficulty method
-     * @param x
+     * @param: x
      * @return none
      */
     public int getDifficulty() {return difficulty;}
@@ -83,7 +93,7 @@ public class Book {
 
     /**
      * getFileType method
-     * @param x
+     * @param: x
      * @return none
      */
     public String getFileType() {return fileType;}
