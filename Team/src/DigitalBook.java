@@ -24,7 +24,7 @@ public class DigitalBook extends Book {
 
     /**
      * getSize method
-     * @param x
+     * @param: none
      * @return none
      */
     public double getSize() {return fileSize;}

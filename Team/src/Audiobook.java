@@ -23,7 +23,7 @@ public class Audiobook extends DigitalBook {
 
     /**
      * getLength method
-     * @param none
+     * @param: none
      * @return length
      */
     public double getLength() {return length;}

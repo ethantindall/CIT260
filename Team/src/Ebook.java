@@ -33,8 +33,8 @@ public class Ebook extends DigitalBook {
 
     /**
      * getAudio method
-     * @param x
-     * @return none
+     * @param: none
+     * @return audio
      */
     public String getAudio() {return audio;}
 

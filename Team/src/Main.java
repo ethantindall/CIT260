@@ -4,6 +4,7 @@
  *  Main Class
  */
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -66,7 +67,7 @@ public class Main {
         System.out.println("Enter publication year:");
         int year = input.nextInt();
 
-        System.out.println("Is this a hardback [1], e-book [2], or audiobook [3]?:");
+        System.out.println("Is this a hardback [1], e-book [2], or Audiobook [3]?:");
         int option = input.nextInt();
 
         int page = 0;
@@ -78,9 +79,12 @@ public class Main {
                 System.out.println("Page count:");
                 page = input.nextInt();
                 System.out.println("Book has been processed.");
+                //create the library array
+                ArrayList<String> library = new ArrayList<>();
                 // Save book to file
-                // TO DO NATHAN
+                library.add(new Hardcopy(String title, String author, int publicationYear, int difficulty, int pageCount));
                 break;
+
             case 2:
                 //ebook
                 System.out.println("Page count:");
@@ -89,7 +93,7 @@ public class Main {
                 file = input.nextDouble();
                 System.out.println("Book has been processed.");
                 // Save book to file
-                // TO DO NATHAN
+                library.add(new Ebook(String title, String author, int publicationYear, int difficulty, double fileSize));
                 break;
             case 3:
                 // audiobook
@@ -99,7 +103,7 @@ public class Main {
                 file = input.nextDouble();
                 System.out.println("Book has been processed.");
                 // Save book to file
-                // TO DO NATHAN
+                library.add(new Audiobook(String title, String author, int publicationYear, int difficulty, double fileSize, double length));
                 break;
             default:
                 //try again
