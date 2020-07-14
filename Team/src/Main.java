@@ -1,3 +1,9 @@
+/** Team Assignment
+ *  CIT 260
+ *  Ethan Tindall & Nathan Martherus
+ *  Main Class
+ */
+
 import java.util.Scanner;
 
 public class Main {
@@ -7,8 +13,10 @@ public class Main {
      * and returns it
      */
     public static void lookup_book() {
+        //set up scanner
         Scanner input = new Scanner(System.in);
         boolean loop = true;
+        //while this loop is running, ask the user how they want to search for the book
         while (loop) {
             System.out.println("Look up a book by:");
             System.out.println("[1] Author");
@@ -16,17 +24,20 @@ public class Main {
             System.out.println("[3] Publication Year");
             System.out.println("[4] Return to Menu");
 
+            //accept their input and search for book by chosen method
             int lookup = input.nextInt();
-
             switch (lookup) {
                 case 1:
                     //looks up book by author's name
+                    // TO DO
                     break;
                 case 2:
                     //looks up book by title
+                    // TO DO
                     break;
                 case 3:
                     //looks up book by publication year
+                    // TO DO
                     break;
                 case 4:
                     //returns to main menu
@@ -38,10 +49,13 @@ public class Main {
         }
     }
 
-    /**
-     *
+    /** enter_book method
+     * Input none
+     * output none
+     * This method gathers the information for the book
      */
     public static void enter_book() {
+        //set up scanner and get input
         Scanner input = new Scanner(System.in);
         System.out.println("Enter title:");
         String title = input.nextLine();
@@ -64,6 +78,8 @@ public class Main {
                 System.out.println("Page count:");
                 page = input.nextInt();
                 System.out.println("Book has been processed.");
+                // Save book to file
+                // TO DO NATHAN
                 break;
             case 2:
                 //ebook
@@ -72,15 +88,18 @@ public class Main {
                 System.out.println("File size:");
                 file = input.nextDouble();
                 System.out.println("Book has been processed.");
+                // Save book to file
+                // TO DO NATHAN
                 break;
             case 3:
                 // audiobook
                 System.out.println("Recording Length (hh:mm:ss):");
                 String length = input.nextLine();
-
                 System.out.println("File size:");
                 file = input.nextDouble();
                 System.out.println("Book has been processed.");
+                // Save book to file
+                // TO DO NATHAN
                 break;
             default:
                 //try again
@@ -95,19 +114,25 @@ public class Main {
      * main method
      */
     public static void main(String[] args) {
+        //set up scanner
         Scanner input = new Scanner(System.in);
         boolean run = true;
+
+        // while this loop is true, ask the user what they want to do
         while (run) {
             System.out.println("Would you like to enter a book [1], look up a book [2], or quit [3]?");
             int in = input.nextInt();
             switch (in) {
                 case 1:
+                    //enter a book
                     enter_book();
                     break;
                 case 2:
+                    //lookup a book
                     lookup_book();
                     break;
                 case 3:
+                    //quit
                     System.out.println("Goodbye.");
                     run = false;
                     break;
