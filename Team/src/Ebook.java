@@ -1,7 +1,17 @@
+/** Team Assignment
+ *  CIT 260
+ *  Ethan Tindall & Nathan Martherus
+ *  Ebook Class
+ */
+
 public class Ebook extends DigitalBook {
+    //member variables
     private String fileType;
     private String audio;
 
+    /**
+     * Ebook constructor
+     */
     Ebook() {
         fileType = "";
         audio = "";
@@ -11,9 +21,27 @@ public class Ebook extends DigitalBook {
         super(title, author, publicationYear, difficulty, fileSize);
         setFileType(fileType);
     }
-    public String getFileType() {return fileType;}
+
+
+
+    /**
+     * setFileType method
+     * @param x
+     * @return none
+     */
     public void setFileType(String x) {fileType = x;}
 
+    /**
+     * getAudio method
+     * @param x
+     * @return none
+     */
     public String getAudio() {return audio;}
+
+    /**
+     * setAudio method
+     * @param x
+     * @return none
+     */
     public void setAudio(String x) {audio = x;}
 }

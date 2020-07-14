@@ -1,6 +1,18 @@
-public class DigitalBook extends Book {
-    private double fileSize;
+/** Team Assignment
+ *  CIT 260
+ *  Ethan Tindall & Nathan Martherus
+ *  DigitalBook Class
+ */
 
+public class DigitalBook extends Book {
+    //member variables
+    private double fileSize;
+    private String fileType;
+
+
+    /**
+     * DigitalBook constructor
+     */
     DigitalBook() {
         fileSize = 0;
     }
@@ -10,7 +22,24 @@ public class DigitalBook extends Book {
         setSize(fileSize);
     }
 
-
+    /**
+     * getSize method
+     * @param x
+     * @return none
+     */
     public double getSize() {return fileSize;}
+
+    /**
+     * setSize method
+     * @param x
+     * @return none
+     */
     public void setSize(double x) {fileSize = x;}
+
+    /**
+     * setFileType method
+     * @param x
+     * @return none
+     */
+    public void setFileType(String x) {fileType = x;}
 }

@@ -1,6 +1,18 @@
-public class Audiobook extends DigitalBook {
-    private double length;
+/** Team Assignment
+ *  CIT 260
+ *  Ethan Tindall & Nathan Martherus
+ *  Audiobook Class
+ */
 
+public class Audiobook extends DigitalBook {
+    //member variables
+    private double length;
+    private String fileType;
+
+
+    /**
+     * Audiobook constructor
+     */
     Audiobook() {
         length = 0;}
 
@@ -9,7 +21,26 @@ public class Audiobook extends DigitalBook {
         setLength(length);
     }
 
+    /**
+     * getLength method
+     * @param none
+     * @return length
+     */
     public double getLength() {return length;}
+
+    /**
+     * setLength method
+     * @param x
+     * @return none
+     */
     public void setLength(double x) {length = x;}
 
+    /**
+     * setFileType method
+     * @param x
+     * @return none
+     */
+    public void setFileType(String x) {fileType = x;}
+
 }
+
