@@ -24,7 +24,7 @@ public class DigitalBook extends Book {
 
     /**
      * getSize method
-     * @param x
+     * @param: none
      * @return none
      */
     public double getSize() {return fileSize;}
@@ -42,4 +42,14 @@ public class DigitalBook extends Book {
      * @return none
      */
     public void setFileType(String x) {fileType = x;}
+
+    public String toString(){
+        String daString = super.toString();
+        daString += " , " + this.fileType;
+
+        return daString;
+    }
 }
+
+
+
