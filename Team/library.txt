@@ -1,0 +1,3 @@
+Hardcopy@300ffa5d, Airborn, Kenneth Oppel, 2000, 300
+Ebook@26a1ab54, Twilight, Steve Jobs, 1999, pdf, 450
+Audiobook@2ef1e4fa, Trucks, Tonka Man, 2020, mp3, 10.0

@@ -6,11 +6,9 @@
 
 public class Book {
     //member variables
-    private String author;
     private String title;
+    private String author;
     private int publicationYear;
-    private int difficulty;
-    private String fileType;
 
 
     /**
@@ -20,26 +18,36 @@ public class Book {
         author = "";
         title = "";
         publicationYear = 0;
-        difficulty = 0;
+
     }
-    public Book(String title, String author, int publicationYear, int difficulty) {
+
+    public Book(String title, String author, int publicationYear) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
-        this.difficulty = difficulty;
-
     }
 
-    public String toString(){
+    /**
+     * toString method
+     * turns data to string to write to file
+     *
+     * @return daString
+     */
+    public String toString() {
         String daString = super.toString();
-        daString += " , " + this.title;
-        daString += " , " + this.author;
-        daString += " , " + this.publicationYear;
-        daString += " , " + this.difficulty;
-
+        daString += ", " + this.title;
+        daString += ", " + this.author;
+        daString += ", " + this.publicationYear;
         return daString;
     }
 
+    /*---------GETTERS AND SETTERS -------------------*/
+
+    /**
+     * getAuthor
+     * @param
+     * @return author
+     */
     public String getAuthor() {return author;}
 
     /**
@@ -49,6 +57,11 @@ public class Book {
      */
     public void setAuthor(String x) {author = x;}
 
+    /**
+     * getTitle method
+     * @return title
+     * @param: none
+     */
     public String getTitle() {return title;}
 
     /**
@@ -60,8 +73,8 @@ public class Book {
 
     /**
      * getYear method
-     * @param: x
-     * @return none
+     * @return year
+     * @param: none
      */
     public int getYear() {return publicationYear;}
 
@@ -71,30 +84,5 @@ public class Book {
      * @return none
      */
     public void setYear(int x) {publicationYear = x;}
-
-    /**
-     * getDifficulty method
-     * @param: x
-     * @return none
-     */
-    public int getDifficulty() {return difficulty;}
-
-    /**
-     * setDifficulty method
-     * @param x
-     * @return none
-     */
-    public void setDifficulty(int x) {difficulty = x;}
-
-    /**
-     * setFileType
-     */
-    public void setFileType() {};
-
-    /**
-     * getFileType method
-     * @param: x
-     * @return none
-     */
-    public String getFileType() {return fileType;}
 }
+

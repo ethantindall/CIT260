@@ -6,49 +6,44 @@
 
 public class Ebook extends DigitalBook {
     //member variables
-    private String fileType;
-    private String audio;
+    private int pageCount;
 
     /**
      * Ebook constructor
      */
     Ebook() {
-        fileType = "";
-        audio = "";
+        pageCount = 0;
+    }
+    public Ebook(String title, String author, int publicationYear, String fileType, int pageCount) {
+        super(title, author, publicationYear, fileType);
+        setPageCount(pageCount);
     }
 
-    public Ebook(String title, String author, int publicationYear, int difficulty, double fileSize) {
-        super(title, author, publicationYear, difficulty, fileSize);
-        setFileType(fileType);
-    }
-
-
-
     /**
-     * setFileType method
-     * @param x
-     * @return none
+     * toString
+     * converts data to string to be written to file
+     * @return
      */
-    public void setFileType(String x) {fileType = x;}
-
-    /**
-     * getAudio method
-     * @param: none
-     * @return audio
-     */
-    public String getAudio() {return audio;}
-
-    /**
-     * setAudio method
-     * @param x
-     * @return none
-     */
-    public void setAudio(String x) {audio = x;}
-
     public String toString(){
         String daString = super.toString();
-        daString += " , " + this.audio + "\n";
-
+        daString += ", " + this.pageCount + "\n";
         return daString;
     }
+
+
+    /*------GETTERS AND SETTERS--------*/
+
+    /**
+     * setPageCount method
+     * @param x
+     * @return none
+     */
+    public void setPageCount(int x) {pageCount = x;}
+
+    /**
+     * getPageCount method
+     * @param: none
+     * @return pagecount
+     */
+    public int getPageCount() {return pageCount;}
 }

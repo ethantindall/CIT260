@@ -1,0 +1,1 @@
+1. The first option will throw the correct error if you enter a wrong number, but not if you enter a letter.

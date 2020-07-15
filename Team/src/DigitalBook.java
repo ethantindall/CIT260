@@ -6,35 +6,33 @@
 
 public class DigitalBook extends Book {
     //member variables
-    private double fileSize;
     private String fileType;
 
 
     /**
      * DigitalBook constructor
      */
-    DigitalBook() {
-        fileSize = 0;
+    DigitalBook() {fileType = "";}
+
+    public DigitalBook(String title, String author, int publicationYear, String fileType) {
+        super(title, author, publicationYear);
+        setFileType(fileType);
     }
 
-    public DigitalBook(String title, String author, int publicationYear, int difficulty, double fileSize) {
-        super(title, author, publicationYear, difficulty);
-        setSize(fileSize);
+
+    /**
+     * toString
+     * converts data to string to be written to file
+     * @return
+     */
+    public String toString(){
+        String daString = super.toString();
+        daString += ", " + this.fileType;
+
+        return daString;
     }
 
-    /**
-     * getSize method
-     * @param: none
-     * @return none
-     */
-    public double getSize() {return fileSize;}
-
-    /**
-     * setSize method
-     * @param x
-     * @return none
-     */
-    public void setSize(double x) {fileSize = x;}
+    /*---------------GETTER AND SETTER ------------*/
 
     /**
      * setFileType method
@@ -43,12 +41,16 @@ public class DigitalBook extends Book {
      */
     public void setFileType(String x) {fileType = x;}
 
-    public String toString(){
-        String daString = super.toString();
-        daString += " , " + this.fileType;
+    /**
+     * getFileType
+     * @param
+     * @return: fileType
+     */
+    public String getFileType() {return fileType;}
 
-        return daString;
-    }
+
+
+
 }
 
 
