@@ -4,11 +4,7 @@
  *  Main Class
  */
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.PrintWriter;
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -204,7 +200,7 @@ public class Main {
         // open/create the library file
         PrintWriter Library = null;
         try {
-            Library = new PrintWriter(fileName);
+            Library = new PrintWriter(new FileWriter(fileName, true));
 
             // write array to the file
             for (int i=0; i<library.size(); i++) {
@@ -216,6 +212,8 @@ public class Main {
         }
         catch (FileNotFoundException fnf) {
             System.out.print("Sorry, the Library is closed");
+        } catch (IOException e) {
+            System.out.print("sorry, the Library is closed");
         }
     }
 
