@@ -6,6 +6,8 @@
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -32,13 +34,12 @@ public class Main {
             System.out.println("[4] Return to Menu");
 
             //accept their input and search for book by chosen method
-            int lookup = input.nextInt();
+            String lookup = input.nextLine();
             String way;
             switch (lookup) {
-                case 1:
+                case "1":
                     //looks up book by author's name
                     System.out.print("Enter the author's name: ");
-                    input.nextLine();
                     way = input.nextLine();
                     try {
                         //search file by row for the lookup parameters
@@ -62,10 +63,9 @@ public class Main {
                         e.printStackTrace();
                     }
                     break;
-                case 2:
+                case "2":
                     //looks up book by title
                     System.out.print("Enter the book's title: ");
-                    input.nextLine();
                     way = input.nextLine();
                     try {
                         //search file by row for the lookup parameters
@@ -89,10 +89,9 @@ public class Main {
                     }
                     catch (IOException e) {e.printStackTrace();}
                     break;
-                case 3:
+                case "3":
                     //looks up book by publication year
                     System.out.print("Enter the book's publication year: ");
-                    input.nextLine();
                     way = input.nextLine();
                     try {
                         //search file by row for the lookup parameters
@@ -110,18 +109,17 @@ public class Main {
                         if (found == false) {
                             System.out.println("");
                             System.out.println("No books found. Try again.");
-                            System.out.println("");
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     break;
-                case 4:
+                case "4":
                     //returns to main menu
                     loop = false;
                     break;
                 default:
-                    System.out.println("Please enter a number.");
+                    System.out.println("Please enter a number between 1-4.");
             }
         }
     }
@@ -141,31 +139,39 @@ public class Main {
 
         System.out.println("Enter author:");
         String author = input.nextLine();
+        int year = 0;
 
-        System.out.println("Enter publication year:");
-        int year = input.nextInt();
-
-        System.out.println("Is this a hardback [1], e-book [2], or Audiobook [3]?:");
-        int option = input.nextInt();
+        //loop verifies that the year entered is a year
+        while (true) {
+            try {
+                System.out.println("Enter publication year:");
+                year = input.nextInt();
+                break;
+            } catch (InputMismatchException ex) {
+                System.out.println("You entered an invalid publication year. Please try again.");
+                input.nextLine();
+            }
+        }
 
         int pageCount;
-        String fileType ="";
+        String fileType = "";
         double length;
+        String option = "";
 
-
-        switch (option) {
-            case 1:
+        //loop verifies that the user correctly selects the type of book
+        while (true) {
+            input.nextLine();
+            System.out.println("Is this a hardback [1], e-book [2], or Audiobook [3]?:");
+            option = input.nextLine();
+            if (Objects.equals(option, "1")) {
                 //hardback
                 System.out.println("Page count:");
                 pageCount = input.nextInt();
-
                 System.out.println("Book has been processed.");
                 // Save book to file
                 daBook = new Hardcopy(title, author, year, pageCount);
-
-                break;
-
-            case 2:
+                return daBook;
+            } else if (Objects.equals(option, "2")) {
                 //ebook
                 System.out.println("Page count:");
                 pageCount = input.nextInt();
@@ -175,8 +181,8 @@ public class Main {
                 System.out.println("Book has been processed.");
                 // Save book to file
                 daBook = new Ebook(title, author, year, fileType, pageCount);
-                break;
-            case 3:
+                return daBook;
+            } else if (Objects.equals(option, "3")) {
                 // audiobook
                 System.out.println("Recording Length (minutes):");
                 length = input.nextDouble();
@@ -186,15 +192,14 @@ public class Main {
                 System.out.println("Book has been processed.");
                 // Save book to file
                 daBook = new Audiobook(title, author, year, fileType, length);
-                break;
-            default:
+                return daBook;
+            } else {
                 //try again
                 System.out.println("Try again.");
-                daBook = null;
-                break;
             }
-        return daBook;
+        }
     }
+
 
     public static void WriteLibrary( ArrayList<Book> library, String fileName ) {
         // open/create the library file
@@ -242,18 +247,18 @@ public class Main {
         // while this loop is true, ask the user what they want to do
         while (run) {
             System.out.println("Would you like to enter a book [1], look up a book [2], or quit [3]?");
-            int in = input.nextInt();
+            String in = input.nextLine();
             switch (in) {
-                case 1:
+                case "1":
                     //enter a book
                     libraryArray.add(enter_book());
                     WriteLibrary(libraryArray, libraryFile);
                     break;
-                case 2:
+                case "2":
                     //lookup a book
                     lookup_book();
                     break;
-                case 3:
+                case "3":
                     //quit
                     System.out.println("Goodbye.");
                     WriteLibrary(libraryArray, libraryFile);
@@ -264,6 +269,7 @@ public class Main {
                     System.out.println("Invalid input. Try again.");
                     break;
             }
+
         }
     }
 }
